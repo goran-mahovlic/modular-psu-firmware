@@ -88,7 +88,8 @@ osThreadId defaultTaskHandle;
 void StartDefaultTask(void const * argument);
 
 extern void MX_LWIP_Init(void);
-extern void MX_USB_DEVICE_Init(void);
+extern void MX_USB_DEVICE_Init(uint8_t deviceType);
+extern void MX_USB_DEVICE_DeInit(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
@@ -157,7 +158,12 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
 
   /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
+  // Init MSC
+//  MX_USB_DEVICE_Init(2);
+  // Deinit
+//  MX_USB_DEVICE_DeInit();
+  // Init CDC
+  MX_USB_DEVICE_Init(1);
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)

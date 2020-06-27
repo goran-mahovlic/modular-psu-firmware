@@ -50,7 +50,6 @@ USBD_HandleTypeDef hUsbDeviceFS;
  * -- Insert your variables declaration here --
  */
 /* USER CODE BEGIN 0 */
-uint8_t MSC = 1;
 /* USER CODE END 0 */
 
 /*
@@ -63,8 +62,9 @@ uint8_t MSC = 1;
 /**
   * Init USB device Library, add supported class and start the library
   * @retval None
+  * @param  deviceType: 1 for MSC, 2 for CDC
   */
-void MX_USB_DEVICE_Init(void)
+void MX_USB_DEVICE_Init(uint8_t deviceType)
 {
   /* USER CODE BEGIN USB_DEVICE_Init_PreTreatment */
   
@@ -75,7 +75,7 @@ void MX_USB_DEVICE_Init(void)
   {
     Error_Handler();
   }
-  if(MSC){
+  if(deviceType == 1){
 	  if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_MSC) != USBD_OK)
 	  {
 		Error_Handler();
@@ -85,7 +85,7 @@ void MX_USB_DEVICE_Init(void)
 		Error_Handler();
 	  }
   }
-  else{
+  else if(deviceType == 2){
 	  if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK)
 	  {
 	    Error_Handler();
@@ -101,8 +101,20 @@ void MX_USB_DEVICE_Init(void)
   }
 
   /* USER CODE BEGIN USB_DEVICE_Init_PostTreatment */
-  
   /* USER CODE END USB_DEVICE_Init_PostTreatment */
+}
+
+void MX_USB_DEVICE_DeInit(void)
+	{
+	if (USBD_Stop(&hUsbDeviceFS) != USBD_OK){
+		Error_Handler();
+	}
+	USBD_ClrClassConfig(&hUsbDeviceFS, &USBD_Storage_Interface_fops_FS);
+	USBD_ClrClassConfig(&hUsbDeviceFS, &USBD_Interface_fops_FS);
+	  /* DeInit Device Library, add supported class and start the library. */
+	if (USBD_DeInit(&hUsbDeviceFS)){
+		Error_Handler();
+	}
 }
 
 /**
