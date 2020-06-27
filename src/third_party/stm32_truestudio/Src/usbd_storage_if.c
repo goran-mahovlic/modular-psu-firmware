@@ -21,8 +21,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_storage_if.h"
-//#include "sd_diskio.h"
-
+#include "bsp_driver_sd.h"
 /* USER CODE BEGIN INCLUDE */
 
 /* USER CODE END INCLUDE */
@@ -128,6 +127,7 @@ const int8_t STORAGE_Inquirydata_FS[] = {/* 36 */
   */
 
 extern USBD_HandleTypeDef hUsbDeviceFS;
+extern SD_HandleTypeDef hsd1;
 
 /* USER CODE BEGIN EXPORTED_VARIABLES */
 
@@ -179,7 +179,8 @@ USBD_StorageTypeDef USBD_Storage_Interface_fops_FS =
 int8_t STORAGE_Init_FS(uint8_t lun)
 {
   /* USER CODE BEGIN 2 */
-	SD_initialize();
+	//SD_initialize();
+	BSP_SD_Init();
   return (USBD_OK);
   /* USER CODE END 2 */
 }
@@ -194,8 +195,9 @@ int8_t STORAGE_Init_FS(uint8_t lun)
 int8_t STORAGE_GetCapacity_FS(uint8_t lun, uint32_t *block_num, uint16_t *block_size)
 {
   /* USER CODE BEGIN 3 */
-  *block_num  = STORAGE_BLK_NBR;
-  *block_size = STORAGE_BLK_SIZ;
+ // We need to get below infor for SD CARD
+  *block_num  = hsd1.SdCard.LogBlockNbr;// STORAGE_BLK_NBR;
+  *block_size = hsd1.SdCard.LogBlockSize; //STORAGE_BLK_SIZ;
   return (USBD_OK);
   /* USER CODE END 3 */
 }
@@ -208,7 +210,8 @@ int8_t STORAGE_GetCapacity_FS(uint8_t lun, uint32_t *block_num, uint16_t *block_
 int8_t STORAGE_IsReady_FS(uint8_t lun)
 {
   /* USER CODE BEGIN 4 */
-  SD_status();
+  //SD_status();
+	BSP_SD_GetCardState();
   return (USBD_OK);
   /* USER CODE END 4 */
 }
@@ -233,8 +236,14 @@ int8_t STORAGE_IsWriteProtected_FS(uint8_t lun)
 int8_t STORAGE_Read_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t blk_len)
 {
   /* USER CODE BEGIN 6 */
-  SD_read(0,buf,blk_addr,blk_len);
-  return (USBD_OK);
+  //SD_read(0,buf,blk_addr,blk_len);
+
+	uint8_t status = BSP_SD_ReadBlocks_DMA ((uint32_t *) buf, (uint32_t) blk_addr, (uint32_t) blk_len);
+
+//	if (status! = MSD_OK) return (USBD_FAIL);
+//	while (BSP_SD_GetCardState ()! = SD_TRANSFER_OK) {}
+
+	return (USBD_OK);
   /* USER CODE END 6 */
 }
 
@@ -246,8 +255,14 @@ int8_t STORAGE_Read_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t bl
 int8_t STORAGE_Write_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t blk_len)
 {
   /* USER CODE BEGIN 7 */
-   SD_write(0,buf,blk_addr,blk_len);
-  return (USBD_OK);
+   //SD_write(0,buf,blk_addr,blk_len);
+	uint8_t status = BSP_SD_WriteBlocks_DMA ((uint32_t *) buf, blk_addr, (uint32_t) blk_len);
+
+	// if (status! = MSD_OK) return (USBD_FAIL);
+
+	//while (BSP_SD_GetCardState ()! = SD_TRANSFER_OK) {}
+
+	return (USBD_OK);
   /* USER CODE END 7 */
 }
 
