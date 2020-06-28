@@ -24,6 +24,8 @@
 #include <usb_device.h>
 #endif
 
+#include "usb_host.h"
+
 #include <eez/firmware.h>
 #include <eez/system.h>
 #include <eez/tasks.h>
@@ -103,6 +105,10 @@ void boot() {
     MX_USB_DEVICE_DeInit();
     // init MSC
     MX_USB_DEVICE_Init(1);
+    // Deinit
+    MX_USB_DEVICE_DeInit();
+
+    MX_USB_HOST_Init();
 #endif
 
 #ifdef EEZ_PLATFORM_SIMULATOR
