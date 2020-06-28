@@ -70,6 +70,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "usb_device.h"
+#include "usb_host.h"
 #include "gpio.h"
 #include "fmc.h"
 
