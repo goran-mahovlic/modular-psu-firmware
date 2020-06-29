@@ -100,15 +100,15 @@ void boot() {
 #if defined(EEZ_PLATFORM_STM32)
     // To check if switching is possible
     // Init CDC
-    MX_USB_DEVICE_Init(2);
-    // Deinit
-    MX_USB_DEVICE_DeInit();
-    // init MSC
     MX_USB_DEVICE_Init(1);
     // Deinit
     MX_USB_DEVICE_DeInit();
+    // init MSC
+    MX_USB_DEVICE_Init(2);
+    // Deinit
+//    MX_USB_DEVICE_DeInit();
 
-    MX_USB_HOST_Init();
+//    MX_USB_HOST_Init();
 #endif
 
 #ifdef EEZ_PLATFORM_SIMULATOR

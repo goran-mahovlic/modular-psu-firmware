@@ -159,11 +159,11 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
 
   /* init code for USB_HOST */
-  MX_USB_HOST_Init();
+//  MX_USB_HOST_Init();  // We need to write DEINIT
   /* USER CODE BEGIN StartDefaultTask */
   /* init code for USB_DEVICE */
   // Init MSC
-//  MX_USB_DEVICE_Init(2);
+  MX_USB_DEVICE_Init(2);
    // Deinit
 //  MX_USB_DEVICE_DeInit();
   // Init CDC
