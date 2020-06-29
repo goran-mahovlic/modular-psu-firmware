@@ -76,7 +76,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "usbh_hid.h"
+static int32_t uart_length = 0;
+uint8_t uart_tx_buffer[100];
+extern HID_MOUSE_Info_TypeDef mouse_info;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -116,6 +119,27 @@ extern void debug_trace(const char *str, size_t len);
 int __io_putstr(char *ptr, int len) {
 	debug_trace(ptr, (size_t)len);
 	return 0;
+}
+
+void USBH_HID_EventCallback(USBH_HandleTypeDef *phost){
+	HID_KEYBD_Info_TypeDef *keybd_info;
+	uint8_t keycode;
+	HID_HandleTypeDef *HID_Handle = (HID_HandleTypeDef *) phost->pActiveClass->pData;
+	if (HID_Handle->Init == USBH_HID_KeybdInit) {
+		keybd_info = USBH_HID_GetKeybdInfo(phost);
+		keycode = USBH_HID_GetASCIICode(keybd_info);
+//		uart_length = sprintf(uart_tx_buffer, "Key pressed: 0x%x\n", keycode);
+//		HAL_UART_Transmit(&huart3, uart_tx_buffer, (uint16_t) uart_length,1000);
+
+	} else if (HID_Handle->Init == USBH_HID_MouseInit) {
+		USBH_HID_GetMouseInfo(phost);
+/*		uart_length = sprintf(uart_tx_buffer,
+						"Mouse action: x=  0x%x, y=  0x%x, button1 = 0x%x, button2 = 0x%x, button3 = 0x%x \n",
+						mouse_info.x, mouse_info.y, mouse_info.buttons[0],
+						mouse_info.buttons[1], mouse_info.buttons[2]);
+		HAL_UART_Transmit(&huart3, uart_tx_buffer, (uint16_t) uart_length,1000);
+	*/
+	}
 }
 /* USER CODE END 0 */
 
