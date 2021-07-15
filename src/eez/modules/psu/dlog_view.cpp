@@ -195,7 +195,7 @@ State getState() {
 }
 
 void stateManagment() {
-    auto newViewWidth = persist_conf::devConf.viewFlags.dlogViewDrawerIsOpen ? 320 : 480;
+    auto newViewWidth = persist_conf::devConf.viewFlags.dlogViewDrawerIsOpen ? 480 : 640;
     if (newViewWidth != VIEW_WIDTH) {
         VIEW_WIDTH = newViewWidth;
         NUM_HORZ_DIVISIONS = VIEW_WIDTH / WIDTH_PER_DIVISION;
@@ -216,7 +216,7 @@ void stateManagment() {
         }
     }
 
-    auto newViewHeight = persist_conf::devConf.viewFlags.dlogViewLegendViewOption == persist_conf::DLOG_VIEW_LEGEND_VIEW_OPTION_DOCK && !persist_conf::devConf.viewFlags.dlogViewDrawerIsOpen ? 204 : 240;
+    auto newViewHeight = persist_conf::devConf.viewFlags.dlogViewLegendViewOption == persist_conf::DLOG_VIEW_LEGEND_VIEW_OPTION_DOCK && !persist_conf::devConf.viewFlags.dlogViewDrawerIsOpen ? 412 : 446;
     if (newViewHeight != VIEW_HEIGHT) {
         VIEW_HEIGHT = newViewHeight;
     }

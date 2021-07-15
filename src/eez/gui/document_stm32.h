@@ -2538,8 +2538,8 @@ enum ColorsEnum {
 enum PagesEnum {
     PAGE_ID_NONE = 0,
     PAGE_ID_SELECT_MCU_REVISION = 1,
-    PAGE_ID_WELCOME = 2,
-    PAGE_ID_WELCOME_800X480 = 3,
+    PAGE_ID_WELCOME_OLD = 2,
+    PAGE_ID_WELCOME = 3,
     PAGE_ID_TOUCH_CALIBRATION_INTRO = 4,
     PAGE_ID_TOUCH_CALIBRATION = 5,
     PAGE_ID_TOUCH_CALIBRATION_YES_NO = 6,
@@ -2770,4 +2770,4 @@ enum PagesEnum {
     PAGE_ID_DIB_MUX14D_RELAY_CYCLES = 231
 };
 
-extern const uint8_t assets[388496];
+extern const uint8_t assets[388929];

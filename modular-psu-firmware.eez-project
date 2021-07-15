@@ -4838,7 +4838,7 @@
         }
       ],
       "connectionLines": [],
-      "name": "welcome",
+      "name": "welcome_old",
       "description": "Welcome screen, display channels capacity and firmware revision",
       "style": "default",
       "left": 0,
@@ -4853,7 +4853,7 @@
           "type": "Container",
           "left": 0,
           "top": 0,
-          "width": 800,
+          "width": 640,
           "height": 240,
           "wireID": "895bd69b-8a09-4072-a798-1cb8b366569b",
           "style": {
@@ -4864,7 +4864,7 @@
               "type": "Select",
               "left": 0,
               "top": 0,
-              "width": 800,
+              "width": 640,
               "height": 240,
               "wireID": "8cd795f3-9b75-4660-b9bc-9c6648ef58ea",
               "data": "has_custom_bitmap",
@@ -4876,7 +4876,7 @@
                   "type": "Container",
                   "left": 0,
                   "top": 0,
-                  "width": 800,
+                  "width": 640,
                   "height": 240,
                   "wireID": "69aceb2b-c440-4d22-c270-8b7a0d8b43ca",
                   "style": {
@@ -4887,7 +4887,7 @@
                       "type": "Select",
                       "left": 0,
                       "top": 4,
-                      "width": 800,
+                      "width": 640,
                       "height": 120,
                       "wireID": "1baf819a-a795-4016-c90a-b8009ad8f838",
                       "data": "is_reset_by_iwdg",
@@ -4899,27 +4899,27 @@
                           "type": "Text",
                           "left": 0,
                           "top": 0,
-                          "width": 800,
+                          "width": 640,
                           "height": 120,
                           "wireID": "36f209bd-943b-4e81-d5a9-f7bb0dd0381b",
                           "style": {
                             "inheritFrom": "default_M",
                             "font": "Oswald48"
                           },
-                          "text": "Welcome to EEZ BB3"
+                          "text": "Welcome to EEZ DLOG"
                         },
                         {
                           "type": "Text",
                           "left": 0,
                           "top": 0,
-                          "width": 800,
+                          "width": 640,
                           "height": 120,
                           "wireID": "d655fcf6-b8e5-48f2-df46-e8a2681e7c54",
                           "style": {
                             "inheritFrom": "default_M_warning",
                             "font": "Oswald48"
                           },
-                          "text": "Welcome to EEZ BB3"
+                          "text": "Welcome to EEZ DLOG"
                         }
                       ]
                     },
@@ -4927,7 +4927,7 @@
                       "type": "Bitmap",
                       "left": 0,
                       "top": 120,
-                      "width": 800,
+                      "width": 640,
                       "height": 120,
                       "wireID": "43066738-3acf-43bc-af7c-8d4435537db6",
                       "style": {
@@ -4941,7 +4941,7 @@
                   "type": "Bitmap",
                   "left": 0,
                   "top": 0,
-                  "width": 800,
+                  "width": 640,
                   "height": 240,
                   "wireID": "e6cb7953-dca8-4d2a-f7cb-45c594b27ef3",
                   "data": "custom_bitmap",
@@ -4955,296 +4955,10 @@
           ]
         },
         {
-          "type": "Container",
-          "left": 264,
-          "top": 260,
-          "width": 336,
-          "height": 30,
-          "wireID": "cb6b7a3f-225c-4283-8063-db3c62a5f7ef",
-          "style": {
-            "inheritFrom": "default",
-            "font": "Oswald14"
-          },
-          "widgets": [
-            {
-              "type": "Text",
-              "left": 0,
-              "top": 0,
-              "width": 76,
-              "height": 30,
-              "wireID": "5f09a790-ad24-4d51-db57-e55230552ac0",
-              "style": {
-                "inheritFrom": "default_S_left",
-                "font": "Oswald14",
-                "alignHorizontal": "left"
-              },
-              "text": "Master:"
-            },
-            {
-              "type": "DisplayData",
-              "left": 76,
-              "top": 0,
-              "width": 170,
-              "height": 30,
-              "wireID": "62cbf53d-cb58-405b-df6c-e52fc2fe33fd",
-              "data": "master_info_with_fw_ver",
-              "style": {
-                "inheritFrom": "default_S_left",
-                "font": "Oswald14"
-              },
-              "displayOption": 0
-            },
-            {
-              "type": "Select",
-              "left": 246,
-              "top": 0,
-              "width": 90,
-              "height": 30,
-              "wireID": "ce4fa9ed-1ccd-415f-b935-5499d26907ab",
-              "data": "master_test_result",
-              "style": {
-                "inheritFrom": "default",
-                "font": "Oswald14"
-              },
-              "widgets": [
-                {
-                  "type": "Text",
-                  "left": 0,
-                  "top": 0,
-                  "width": 90,
-                  "height": 30,
-                  "wireID": "8b52e301-d2f3-47ab-97a1-8f2da7dacf81",
-                  "style": {
-                    "inheritFrom": "default_S_left",
-                    "font": "Oswald14"
-                  },
-                  "text": " "
-                },
-                {
-                  "type": "Text",
-                  "left": 0,
-                  "top": 0,
-                  "width": 90,
-                  "height": 30,
-                  "wireID": "7261b71f-b032-4989-8706-de71cff44b43",
-                  "style": {
-                    "inheritFrom": "default_S_left_warning",
-                    "font": "Oswald14"
-                  },
-                  "text": "Failed"
-                },
-                {
-                  "type": "Text",
-                  "left": 0,
-                  "top": 0,
-                  "width": 90,
-                  "height": 30,
-                  "wireID": "9f6ae3fb-bc41-4753-d846-d07f0ede8193",
-                  "style": {
-                    "inheritFrom": "default_S_left_ok",
-                    "font": "Oswald14"
-                  },
-                  "text": "OK"
-                },
-                {
-                  "type": "Text",
-                  "left": 0,
-                  "top": 0,
-                  "width": 90,
-                  "height": 30,
-                  "wireID": "131efda7-aef1-48e4-d576-aa38eb8fcf52",
-                  "style": {
-                    "inheritFrom": "default_S_left",
-                    "font": "Oswald14"
-                  },
-                  "text": " "
-                },
-                {
-                  "type": "Text",
-                  "left": 0,
-                  "top": 0,
-                  "width": 90,
-                  "height": 30,
-                  "wireID": "8e041b24-c31c-4183-d471-f7c5126b56dd",
-                  "style": {
-                    "inheritFrom": "default_S_left",
-                    "font": "Oswald14"
-                  },
-                  "text": " "
-                },
-                {
-                  "type": "Text",
-                  "left": 0,
-                  "top": 0,
-                  "width": 90,
-                  "height": 30,
-                  "wireID": "8ecd826e-eeff-49f9-a6d8-50218b095728",
-                  "style": {
-                    "inheritFrom": "default_S_left_warning",
-                    "font": "Oswald14"
-                  },
-                  "text": "Warning"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "List",
-          "left": 264,
-          "top": 290,
-          "width": 336,
-          "height": 90,
-          "wireID": "29ee0cf1-5a25-4f40-8a07-4243575d5b1a",
-          "data": "slots",
-          "style": {
-            "inheritFrom": "default",
-            "font": "Oswald14"
-          },
-          "itemWidget": {
-            "type": "Container",
-            "left": 0,
-            "top": 0,
-            "width": 336,
-            "height": 30,
-            "wireID": "b789d9b5-633a-4193-fcdb-657bea244358",
-            "style": {
-              "inheritFrom": "default",
-              "font": "Oswald14"
-            },
-            "widgets": [
-              {
-                "type": "Text",
-                "left": 0,
-                "top": 0,
-                "width": 76,
-                "height": 30,
-                "wireID": "e76e51b9-87a2-4ed1-ee06-de97b1acc60d",
-                "data": "slot_index",
-                "style": {
-                  "inheritFrom": "default_S_left",
-                  "font": "Oswald14",
-                  "alignHorizontal": "left"
-                },
-                "text": ""
-              },
-              {
-                "type": "DisplayData",
-                "left": 76,
-                "top": 0,
-                "width": 170,
-                "height": 30,
-                "wireID": "e73cd7dc-c396-4e4a-945a-1004b910b47c",
-                "data": "slot_info_with_fw_ver",
-                "style": {
-                  "inheritFrom": "default_S_left",
-                  "font": "Oswald14"
-                },
-                "displayOption": 0
-              },
-              {
-                "type": "Select",
-                "left": 246,
-                "top": 0,
-                "width": 90,
-                "height": 30,
-                "wireID": "53dd1d9f-4a2f-4b32-d72b-18a21b12b7d0",
-                "data": "slot_test_result",
-                "style": {
-                  "inheritFrom": "default",
-                  "font": "Oswald14"
-                },
-                "widgets": [
-                  {
-                    "type": "Text",
-                    "left": 0,
-                    "top": 0,
-                    "width": 90,
-                    "height": 30,
-                    "wireID": "53593117-0c8b-4619-8e93-062f0afb4711",
-                    "style": {
-                      "inheritFrom": "default_S_left",
-                      "font": "Oswald14"
-                    },
-                    "text": " "
-                  },
-                  {
-                    "type": "Text",
-                    "left": 0,
-                    "top": 0,
-                    "width": 90,
-                    "height": 30,
-                    "wireID": "80f5312a-5375-4e52-9ab5-5dc32d0fdbf5",
-                    "style": {
-                      "inheritFrom": "default_S_left_warning",
-                      "font": "Oswald14"
-                    },
-                    "text": "Failed"
-                  },
-                  {
-                    "type": "Text",
-                    "left": 0,
-                    "top": 0,
-                    "width": 90,
-                    "height": 30,
-                    "wireID": "5d611a63-3419-41b1-e5f4-af1366e39cc4",
-                    "style": {
-                      "inheritFrom": "default_S_left_ok",
-                      "font": "Oswald14"
-                    },
-                    "text": "OK"
-                  },
-                  {
-                    "type": "Text",
-                    "left": 0,
-                    "top": 0,
-                    "width": 90,
-                    "height": 30,
-                    "wireID": "a4703b31-584b-44e0-d578-f1a29b51499d",
-                    "style": {
-                      "inheritFrom": "default_S_left",
-                      "font": "Oswald14"
-                    },
-                    "text": " "
-                  },
-                  {
-                    "type": "Text",
-                    "left": 0,
-                    "top": 0,
-                    "width": 90,
-                    "height": 30,
-                    "wireID": "3a0d1fb5-638e-4b32-f494-fc206e17ce66",
-                    "style": {
-                      "inheritFrom": "default_S_left",
-                      "font": "Oswald14"
-                    },
-                    "text": " "
-                  },
-                  {
-                    "type": "Text",
-                    "left": 0,
-                    "top": 0,
-                    "width": 90,
-                    "height": 30,
-                    "wireID": "46fa2417-7a4a-4ef9-df70-3a24afa26401",
-                    "style": {
-                      "inheritFrom": "default_S_left_warning",
-                      "font": "Oswald14"
-                    },
-                    "text": "Warning"
-                  }
-                ]
-              }
-            ]
-          },
-          "listType": "vertical",
-          "gap": 0
-        },
-        {
           "type": "Select",
           "left": 0,
           "top": 476,
-          "width": 800,
+          "width": 640,
           "height": 4,
           "wireID": "524f7acd-1159-41f8-c302-8040870349c7",
           "data": "has_custom_bitmap",
@@ -5256,7 +4970,7 @@
               "type": "Rectangle",
               "left": 0,
               "top": 0,
-              "width": 800,
+              "width": 640,
               "height": 4,
               "wireID": "48d366c4-95c3-4901-a6d1-0848819df453",
               "style": {
@@ -5268,7 +4982,7 @@
               "type": "Select",
               "left": 0,
               "top": 0,
-              "width": 800,
+              "width": 640,
               "height": 4,
               "wireID": "cc934f8b-8391-41c8-df54-d667015178be",
               "data": "is_reset_by_iwdg",
@@ -5280,7 +4994,7 @@
                   "type": "Rectangle",
                   "left": 0,
                   "top": 0,
-                  "width": 800,
+                  "width": 640,
                   "height": 4,
                   "wireID": "05280f6c-d857-4474-a91c-3c9f25002219",
                   "style": {
@@ -5292,7 +5006,7 @@
                   "type": "Rectangle",
                   "left": 0,
                   "top": 0,
-                  "width": 800,
+                  "width": 640,
                   "height": 4,
                   "wireID": "7487e224-551f-47df-cc8b-dbfff40e1371",
                   "style": {
@@ -5306,12 +5020,12 @@
         }
       ],
       "connectionLines": [],
-      "name": "welcome_800x480",
+      "name": "welcome",
       "description": "Welcome screen, display channels capacity and firmware revision",
       "style": "default",
       "left": 0,
       "top": 0,
-      "width": 800,
+      "width": 640,
       "height": 480,
       "dataContextOverrides": "{\n    \"slots\": [\n        {\n            \"slot_index\": \"Slot #1:\",\n            \"slot_info_with_fw_ver\": \"DCP405 R3B3\"\n        },\n        {\n            \"slot_index\": \"Slot #2:\",\n            \"slot_info_with_fw_ver\": \"SMX46 R1B2 v0.7\"\n        },\n        {\n            \"slot_index\": \"Slot #3:\",\n            \"slot_info_with_fw_ver\": \"MIO168 R1B2 ---\"\n        }\n    ]\n}"
     },
@@ -35918,8 +35632,8 @@
       "components": [
         {
           "type": "Text",
-          "left": 0,
-          "top": 90,
+          "left": 73,
+          "top": 179,
           "width": 480,
           "height": 40,
           "wireID": "c0e6a4d2-8990-4b6d-a127-ecbad3d69971",
@@ -35930,8 +35644,8 @@
         },
         {
           "type": "MultilineText",
-          "left": 120,
-          "top": 166,
+          "left": 189,
+          "top": 241,
           "width": 240,
           "height": 50,
           "wireID": "c2321c41-a2be-4871-f398-0a7310a98619",
@@ -35947,8 +35661,8 @@
       "style": "default",
       "left": 0,
       "top": 0,
-      "width": 480,
-      "height": 272
+      "width": 640,
+      "height": 480
     },
     {
       "components": [
@@ -38038,8 +37752,8 @@
           "type": "Select",
           "left": 0,
           "top": 0,
-          "width": 480,
-          "height": 272,
+          "width": 640,
+          "height": 480,
           "wireID": "b77679f7-b5aa-48c1-bca2-feadc6ddc124",
           "data": "dlog_view_state",
           "style": {
@@ -38050,8 +37764,8 @@
               "type": "Container",
               "left": 0,
               "top": 0,
-              "width": 480,
-              "height": 272,
+              "width": 640,
+              "height": 480,
               "wireID": "80422604-d84e-46f5-a9c3-520b7000ca1c",
               "style": {
                 "inheritFrom": "default"
@@ -38061,8 +37775,8 @@
                   "type": "Rectangle",
                   "left": 0,
                   "top": 0,
-                  "width": 480,
-                  "height": 240,
+                  "width": 640,
+                  "height": 480,
                   "wireID": "de210c4d-77de-4b42-b0f4-a7a886a87616",
                   "style": {
                     "inheritFrom": "default"
@@ -38072,7 +37786,7 @@
                 {
                   "type": "Container",
                   "left": 0,
-                  "top": 240,
+                  "top": 448,
                   "width": 480,
                   "height": 32,
                   "wireID": "737740e5-bb50-4776-aea3-b36f7547ab54",
@@ -38135,7 +37849,7 @@
                     },
                     {
                       "type": "Rectangle",
-                      "left": 40,
+                      "left": 42,
                       "top": 0,
                       "width": 438,
                       "height": 32,
@@ -38153,8 +37867,8 @@
               "type": "Container",
               "left": 0,
               "top": 0,
-              "width": 480,
-              "height": 272,
+              "width": 640,
+              "height": 480,
               "wireID": "bef70705-b26b-45f3-f1b2-7d90de4e67c4",
               "style": {
                 "inheritFrom": "default"
@@ -38164,8 +37878,8 @@
                   "type": "Text",
                   "left": 0,
                   "top": 0,
-                  "width": 480,
-                  "height": 240,
+                  "width": 640,
+                  "height": 448,
                   "wireID": "e4684617-f7bd-4f4a-e55b-2d301d9c2cda",
                   "style": {
                     "inheritFrom": "default",
@@ -38176,7 +37890,7 @@
                 {
                   "type": "Container",
                   "left": 0,
-                  "top": 240,
+                  "top": 448,
                   "width": 480,
                   "height": 32,
                   "wireID": "697f44d3-40ff-4866-a478-5662db1ce74d",
@@ -38239,7 +37953,7 @@
                     },
                     {
                       "type": "Rectangle",
-                      "left": 40,
+                      "left": 42,
                       "top": 0,
                       "width": 438,
                       "height": 32,
@@ -38257,8 +37971,8 @@
               "type": "Container",
               "left": 0,
               "top": 0,
-              "width": 480,
-              "height": 272,
+              "width": 640,
+              "height": 480,
               "wireID": "7ac08bf5-753e-4b60-f478-58e1581884e5",
               "style": {
                 "inheritFrom": "default"
@@ -38268,8 +37982,8 @@
                   "type": "Text",
                   "left": 0,
                   "top": 0,
-                  "width": 480,
-                  "height": 240,
+                  "width": 640,
+                  "height": 448,
                   "wireID": "293b873c-61ac-45aa-d232-1e3b7fec955f",
                   "style": {
                     "inheritFrom": "default",
@@ -38282,7 +37996,7 @@
                 {
                   "type": "Container",
                   "left": 0,
-                  "top": 240,
+                  "top": 448,
                   "width": 480,
                   "height": 32,
                   "wireID": "4b270a04-b9df-4e20-deef-23719cce0879",
@@ -38345,7 +38059,7 @@
                     },
                     {
                       "type": "Rectangle",
-                      "left": 40,
+                      "left": 42,
                       "top": 0,
                       "width": 438,
                       "height": 32,
@@ -38363,8 +38077,8 @@
               "type": "Container",
               "left": 0,
               "top": 0,
-              "width": 480,
-              "height": 272,
+              "width": 640,
+              "height": 480,
               "wireID": "4f0bb0a6-61c9-4204-a387-35790372f391",
               "style": {
                 "inheritFrom": "default"
@@ -38374,8 +38088,8 @@
                   "type": "Select",
                   "left": 0,
                   "top": 0,
-                  "width": 480,
-                  "height": 272,
+                  "width": 640,
+                  "height": 480,
                   "wireID": "914de1e1-88ec-4cb5-9ef6-e24dd9811862",
                   "data": "dlog_view_is_drawer_open",
                   "style": {
@@ -38386,8 +38100,8 @@
                       "type": "Container",
                       "left": 0,
                       "top": 0,
-                      "width": 480,
-                      "height": 272,
+                      "width": 640,
+                      "height": 480,
                       "wireID": "ac20acd1-6c67-44c8-c26d-612dd91d56b5",
                       "style": {
                         "inheritFrom": "default"
@@ -38396,9 +38110,9 @@
                         {
                           "type": "Container",
                           "left": 0,
-                          "top": 240,
+                          "top": 408,
                           "width": 480,
-                          "height": 32,
+                          "height": 36,
                           "wireID": "74de94b2-9441-486d-bfad-eff6a6572c48",
                           "style": {
                             "inheritFrom": "default"
@@ -38838,8 +38552,8 @@
                           "type": "Select",
                           "left": 0,
                           "top": 0,
-                          "width": 480,
-                          "height": 240,
+                          "width": 640,
+                          "height": 440,
                           "wireID": "12121eef-d034-4c6a-f276-8c97c1ac861d",
                           "data": "dlog_view_legend_view_option",
                           "style": {
@@ -38850,8 +38564,8 @@
                               "type": "YTGraph",
                               "left": 0,
                               "top": 0,
-                              "width": 480,
-                              "height": 240,
+                              "width": 640,
+                              "height": 440,
                               "wireID": "836be764-9aa8-42dd-aa7b-ce44a719f154",
                               "data": "recording",
                               "action": "edit",
@@ -38871,8 +38585,8 @@
                               "type": "YTGraph",
                               "left": 0,
                               "top": 0,
-                              "width": 480,
-                              "height": 240,
+                              "width": 640,
+                              "height": 440,
                               "wireID": "1d1789e0-ce20-4b8f-ed57-cc5861736bd8",
                               "data": "recording",
                               "action": "edit",
@@ -38892,8 +38606,8 @@
                               "type": "Container",
                               "left": 0,
                               "top": 0,
-                              "width": 480,
-                              "height": 240,
+                              "width": 640,
+                              "height": 440,
                               "wireID": "cd0e99c3-e2b5-4be0-87cb-322ae81bda6f",
                               "style": {
                                 "inheritFrom": "default"
@@ -39044,8 +38758,8 @@
                                   "type": "YTGraph",
                                   "left": 0,
                                   "top": 36,
-                                  "width": 480,
-                                  "height": 204,
+                                  "width": 640,
+                                  "height": 404,
                                   "wireID": "0dbe9e5f-076f-46b2-ed43-c9b5afdd4488",
                                   "data": "recording",
                                   "action": "edit",
@@ -39071,8 +38785,8 @@
                       "type": "Container",
                       "left": 0,
                       "top": 0,
-                      "width": 480,
-                      "height": 272,
+                      "width": 640,
+                      "height": 480,
                       "wireID": "cdad10ca-7ef9-46d9-c510-8a663a20e0aa",
                       "style": {
                         "inheritFrom": "default"
@@ -39081,7 +38795,7 @@
                         {
                           "type": "Container",
                           "left": 0,
-                          "top": 240,
+                          "top": 448,
                           "width": 320,
                           "height": 32,
                           "wireID": "664d3844-f2d7-4957-af75-f27039a41814",
@@ -39177,7 +38891,7 @@
                                         {
                                           "type": "Text",
                                           "left": 0,
-                                          "top": 0,
+                                          "top": 18,
                                           "width": 80,
                                           "height": 14,
                                           "wireID": "a0a54871-95db-492e-8e50-50db7b726511",
@@ -39190,7 +38904,7 @@
                                         {
                                           "type": "DisplayData",
                                           "left": 0,
-                                          "top": 14,
+                                          "top": 0,
                                           "width": 80,
                                           "height": 18,
                                           "wireID": "5f6e353d-06c4-4ab1-fa50-b2b7f7e139ce",
@@ -39481,10 +39195,10 @@
                         },
                         {
                           "type": "YTGraph",
-                          "left": 0,
+                          "left": 2,
                           "top": 0,
-                          "width": 320,
-                          "height": 240,
+                          "width": 480,
+                          "height": 444,
                           "wireID": "d4754c3b-0c15-4cf9-fdd5-77b71c0a5e07",
                           "data": "recording",
                           "action": "edit",
@@ -39502,7 +39216,7 @@
                         },
                         {
                           "type": "LayoutView",
-                          "left": 320,
+                          "left": 480,
                           "top": 0,
                           "width": 160,
                           "height": 272,
@@ -39905,8 +39619,8 @@
       "style": "default",
       "left": 0,
       "top": 0,
-      "width": 480,
-      "height": 272
+      "width": 640,
+      "height": 480
     },
     {
       "components": [

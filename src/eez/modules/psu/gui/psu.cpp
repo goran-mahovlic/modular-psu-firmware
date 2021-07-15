@@ -405,7 +405,7 @@ bool PsuAppContext::isActiveWidget(const WidgetCursor &widgetCursor) {
 }
 
 int PsuAppContext::getMainPageId() {
-    return PAGE_ID_MAIN;
+    return PAGE_ID_DLOG_VIEW;
 }
 
 bool isSysSettingsSubPage(int pageId) {
