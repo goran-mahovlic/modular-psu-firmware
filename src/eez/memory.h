@@ -87,8 +87,8 @@ static const uint32_t VRAM_BUFFER_SIZE = DISPLAY_WIDTH * DISPLAY_HEIGHT * 2; // 
 #endif
 
 #if defined(EEZ_PLATFORM_SIMULATOR)
-static const uint32_t DISPLAY_WIDTH = 1396;
-static const uint32_t DISPLAY_HEIGHT = 563;
+static const uint32_t DISPLAY_WIDTH = 640;
+static const uint32_t DISPLAY_HEIGHT = 480;
 static const uint32_t VRAM_BUFFER_SIZE = DISPLAY_WIDTH * DISPLAY_HEIGHT * 4; // RGBA8888
 #endif
 
