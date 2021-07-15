@@ -80,7 +80,11 @@ std::string getFullPath(std::string category, std::string path) {
 }
 
 int getDesktopResolution(int *w, int *h) {
-    SDL_Init(SDL_INIT_VIDEO);
+
+   if ( SDL_Init (SDL_INIT_VIDEO) < 0 ) {
+                printf("main: Could not initialize SDL: %s", SDL_GetError());
+                printf("main: Could not initialize SDL: %s", SDL_GetError());
+        }
 
     SDL_DisplayMode dm;
     if (SDL_GetDesktopDisplayMode(0, &dm) == 0) {

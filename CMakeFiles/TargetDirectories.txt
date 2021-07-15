@@ -1,0 +1,3 @@
+/home/mistery/opt/Ulx3sSmp/buildroot-build/build/eez-simulator/CMakeFiles/rebuild_cache.dir
+/home/mistery/opt/Ulx3sSmp/buildroot-build/build/eez-simulator/CMakeFiles/modular-psu-firmware.dir
+/home/mistery/opt/Ulx3sSmp/buildroot-build/build/eez-simulator/CMakeFiles/edit_cache.dir
